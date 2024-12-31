@@ -11,7 +11,7 @@ const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: 'profile',
+        path: '',
         component: TeacherComponent,
         children: [
             {
