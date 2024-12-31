@@ -1,0 +1,192 @@
+<div class="vidvan-site-layout">
+    <div class="grid align-items-center m-0">
+        <div class="col-12 lg:col-3 p-0">
+            <div class="vidvan-logo">
+                <h1 class="logo size-24 m-0 text-left">Vidvan</h1>
+            </div>
+        </div>
+        <div class="col-12 lg:col-9 p-0">
+            <div class="flex align-items-center justify-content-between">
+                <div class="p-stepperStepperPanel">
+                    <p-stepper *ngIf="stepperCondition()" [(activeStep)]="active" [linear]="true">
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                    </p-stepper>
+                    <p-stepper *ngIf="setupCondition()" [(activeStep)]="active" [linear]="true">
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                        <p-stepperPanel>
+                            <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                                <button class="stepperPanel-button" (click)="onClick.emit()">
+                                    <span
+                                        class="stepperPanel-spanButton"
+                                        [ngClass]="{
+                                            'spanButton-activ': index <= active,
+                                            'surface-border': index > active,
+                                        }">
+                                    </span>
+                                </button>
+                            </ng-template>
+                        </p-stepperPanel>
+                    </p-stepper>
+                    <p class="size-24">
+                        0{{ active + 1 }}<span class="size-16">/0{{ stepperCondition() ? 5 : 8 }}</span>
+                    </p>
+                </div>
+                <i (click)="openCancelConfirmationModal()" class="pi pi-times size-16" style="color: #b71c1c"></i>
+            </div>
+        </div>
+    </div>
+</div>

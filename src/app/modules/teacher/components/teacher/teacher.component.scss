@@ -1,0 +1,199 @@
+.vidvan-site-layout {
+    background: #FFFFFF;
+    height: 100%;
+    margin: 0 auto !important;
+    // max-width: 2000px;
+}
+
+.teacherInfo-content {
+    width: 100%;
+    max-width: 116rem;
+    gap: 6rem;
+    height: calc(100vh - 10rem);
+    margin: 0 auto;
+    padding: 3.4rem 0;
+}
+
+.teacherInfoSidebar-content {
+    flex: 0 0 40rem;
+}
+
+.teacherInfoClass-content {
+    flex: 1;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.teacherDashboard-content {
+    width: 100%;
+    height: calc(100vh - 198px);
+    background: #F9F9F9;
+    // max-width: 2000px;
+    margin-top: 0 !important;
+    padding: 20px 32px;
+}
+
+@media (max-width: 1200px) {
+
+    .teacherInfo-content {
+        width: 90%;
+        max-width: 90%;
+        gap: 40px;
+        height: calc(100vh - 176px);
+    }
+
+    .teacherInfoSidebar-content {
+        flex: 0 0 300px;
+    }
+
+    .vidvan-site-layout .vidvan-sidebar {
+        position: fixed;
+        inset: 0 0 0 0;
+        flex: 1;
+        width: 100%;
+        height: 100vh;
+        z-index: 9;
+        visibility: hidden;
+
+        &.open-sidebar {
+            visibility: visible;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 0 0;
+            background: rgb(0 0 0 / 30%);
+        }
+    }
+
+    :host ::ng-deep {
+
+        .vidvan-site-layout .vidvan-sidebar {
+
+            .p-sidebar {
+                width: 290px;
+            }
+        }
+
+        .toggle-btn-sidebar {
+            display: flex;
+        }
+
+        .vidvan-sidebar {
+
+            .vidvan-sidebar-res {
+                width: 311px;
+                position: relative;
+                height: 100vh;
+                left: -290px;
+                transition: 0.8s all;
+            }
+
+            &.open-sidebar {
+
+                .vidvan-sidebar-res {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+
+    .teacherInfo-content {
+        gap: 24px;
+    }
+
+    .teacherInfoSidebar-content {
+        flex: 1;
+        width: 50%;
+    }
+
+    .teacherInfoClass-content {
+        flex: 1;
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .teacherInfo-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .vidvan-site-layout {
+        padding: 32px 18px;
+        height: auto;
+    }
+}
+
+// .vidvan-sidebar {
+//     flex: 0 0 264px;
+//     height: calc(100vh - 64px);
+//     position: sticky;
+//     top: 32px;
+
+//     .p-sidebar {
+//         position: relative;
+//     }
+// }
+
+// .vidvan-router-outlet {
+//     flex: 1;
+//     width: 100%;
+//     overflow: hidden;
+// }
+
+// .toggle-btn-sidebar {
+//     display: none;
+//     position: absolute;
+//     right: 0;
+//     top: 50%;
+//     justify-content: center;
+//     align-items: center;
+//     width: 22px;
+//     height: 120px;
+//     visibility: visible;
+//     text-decoration: none;
+//     transform: rotate(180deg) translate(0, 150%);
+
+//     img {
+//         position: absolute;
+//         filter: brightness(0) saturate(100%) invert(19%) sepia(16%) saturate(7%) hue-rotate(344deg) brightness(100%) contrast(81%);
+//     }
+
+//     i {
+//         color: #fff;
+//         position: relative;
+//         z-index: 1;
+//         transform: rotate(180deg);
+//         transition: 0.8s all;
+//     }
+// }
+
+// .vidvan-site-layout .vidvan-sidebar.open-sidebar .toggle-btn-sidebar {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     i {
+//         transform: rotate(0);
+//     }
+// }
+
+// .vidvan-sidebar-res {
+//     height: 100%;
+// }
+
+// ::ng-deep .teacher-messages-component {
+
+//     .chat-board {
+
+//         .chat-board-conversation {
+//             height: calc(100vh - 435px) !important;
+//         }
+
+//     }
+// }

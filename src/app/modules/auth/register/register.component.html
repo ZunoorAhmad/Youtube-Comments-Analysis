@@ -1,0 +1,114 @@
+<div class="vidvan-site-layout">
+    <div class="vidvan-logo">
+        <h1 class="size-24 we-5 line-height-24 text-left logo m-0">Vidvan</h1>
+    </div>
+</div>
+
+<div class="singIn-vidvan">
+    <form [formGroup]="signupForm">
+        <div class="singIn-content">
+            <div class="grid m-0 singIn-contentBody">
+                <div class="singIn-contentFirst lg:block hidden">
+                    <div class="sidebarImg">
+                        <img src="/assets/images/sidebar-1.png" alt="sidebar1" />
+                    </div>
+                </div>
+                <div class="singIn-contentSecond">
+                    <div class="flex flex-column singIn-second">
+                        <h2 class="size-24 we-4 natural-black line-height-24 letter-spacing5 m-0">
+                            Create new account
+                        </h2>
+                        <div class="fields-area vidvan-fields flex flex-column gap-8px vidvan-inputFields">
+                            <label class="size-16 we-4 natural-black line-height-24 letter-spacing2" for="username"
+                                >Email Address*</label
+                            >
+                            <input pInputText type="email" formControlName="email" placeholder="Enter Email Address" />
+                            <p
+                                class="size-12 we-4 color-danger line-height-16 letter-spacing1 m-0"
+                                *ngIf="formControl['email'].touched && formControl['email'].errors?.['required']">
+                                Email is required
+                            </p>
+                            <p
+                                class="size-12 we-4 color-danger line-height-16 letter-spacing1 m-0"
+                                *ngIf="formControl['email'].touched && formControl['email'].errors?.['pattern']">
+                                Enter a valid email
+                            </p>
+                        </div>
+                        <div class="fields-area vidvan-fields flex flex-column gap-8px vidvan-inputFields">
+                            <label class="size-16 we-4 natural-black line-height-24 letter-spacing2" for="username"
+                                >Password*</label
+                            >
+                            <p-password
+                                styleClass="w-full"
+                                placeholder="Enter Password"
+                                formControlName="password"
+                                [feedback]="false"
+                                [toggleMask]="true" />
+                            <p
+                                class="size-12 we-4 color-danger line-height-16 letter-spacing1 m-0"
+                                *ngIf="formControl['password'].touched && formControl['password'].errors?.['required']">
+                                Password is Required
+                            </p>
+                            <p
+                                class="size-12 we-4 color-danger line-height-16 letter-spacing1 m-0"
+                                *ngIf="
+                                    formControl['password'].touched && formControl['password'].errors?.['minlength']
+                                ">
+                                Password must contain at least 6 characters
+                            </p>
+                        </div>
+                        <div class="fields-area vidvan-fields flex flex-column gap-8px vidvan-inputFields">
+                            <label class="size-16 we-4 natural-black line-height-24 letter-spacing2" for="username"
+                                >Confirm Password*</label
+                            >
+                            <p-password
+                                styleClass="w-full"
+                                placeholder="Enter Confirm Password"
+                                formControlName="confirmPassword"
+                                [feedback]="false"
+                                [toggleMask]="true" />
+                            <p
+                                class="size-12 we-4 color-danger line-height-16 letter-spacing1 m-0"
+                                *ngIf="
+                                    formControl['confirmPassword'].touched && signupForm.errors?.['passwordmatcherror']
+                                ">
+                                Passwords do not match
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-column singIn-button">
+                        <div class="flex align-items-center singIn-two-btn">
+                            <p-button
+                                (click)="signup()"
+                                [disabled]="!signupForm.valid"
+                                styleClass="size-14 we-5 primary-btn justify-content-center singIn-btn1"
+                                label="Signup" />
+                            <span class="size-16 we-5 natural-black">or</span>
+                            <div class="relative googleSingin">
+                                <p-button
+                                    styleClass="size-14 we-5 gap-3 justify-content-center singIn-btn1"
+                                    [outlined]="true"
+                                    class="relative">
+                                    <img src="/assets/pi-Icons/gologe-logo.svg" alt="gologe" />
+                                    <span>Signin with Google</span>
+                                </p-button>
+                                <asl-google-signin-button
+                                    shape="rectangular"
+                                    type="standard"
+                                    size="large"
+                                    class="btn-google"
+                                    text="signin_with"></asl-google-signin-button>
+                            </div>
+                        </div>
+                        <p class="size-16 we-4 color-black2 footer-text">
+                            Already have an account?
+                            <a (click)="globalService.goToPage('/auth/sign-in')" class="we-5 text-underline"
+                                >Login here</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

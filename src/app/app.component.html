@@ -1,0 +1,21 @@
+<p-toast position="top-right"></p-toast>
+<router-outlet></router-outlet>
+<p-confirmDialog #cd [style]="{ minWidth: '30vw' }" styleClass="confirm-Dialog">
+    <ng-template pTemplate="footer">
+        <p-button
+            [text]="true"
+            [label]="globalService.rejectLabel"
+            icon="pi pi-times"
+            ripple="false"
+            styleClass="color-primary No-primary-btn"
+            (click)="cd.reject()"></p-button>
+        <p-button
+            [label]="globalService.acceptLabel"
+            icon="pi pi-check"
+            styleClass="primary-btn"
+            (click)="cd.accept()"></p-button>
+    </ng-template>
+</p-confirmDialog>
+<div class="spinner-container" *ngIf="loadAction">
+    <p-progressSpinner></p-progressSpinner>
+</div>

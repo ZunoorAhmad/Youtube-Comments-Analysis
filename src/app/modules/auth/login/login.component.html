@@ -1,0 +1,68 @@
+<div class="vidvan-site-layout loginLogo-header">
+    <div class="vidvan-logo logo-header">
+        <h1 class="logo size-24 m-0 text-left">Vidvan</h1>
+    </div>
+</div>
+
+<div class="vidvan-site-body">
+    <div class="flex flex-column wlcomeVidvan-content">
+        <div class="flex flex-column wlcomeVidvan-header">
+            <h2 class="size-48 we-4 line-height-56 m-0">Welcome to Vidvan</h2>
+            <p class="size-24 we-4 line-height-24 letter-spacing5 m-0">Choose your role below to Signup</p>
+        </div>
+
+        <div class="grid md:flex-nowrap p-cardVidvan-grid">
+            <div class="col-12 md:col-6 flex-auto p-0">
+                <div class="card flex md:justify-content-start justify-content-center p-card-vidvan">
+                    <p-card styleClass="p-cardVidvan" (click)="selectedRole = 'student'">
+                        <ng-template pTemplate="header">
+                            <img alt="Card" src="/assets/images/logoStudent.png" />
+                        </ng-template>
+                        <div class="flex align-items-center justify-content-center">
+                            <label for="ingredient1" class="size-34 we-4 text-left"> I`m a Student </label>
+                        </div>
+                        <ng-template pTemplate="footer">
+                            <div class="flex flex-column align-items-center singIn-button">
+                                <p-button
+                                    (click)="onSignIn('student')"
+                                    [outlined]="true"
+                                    severity="secondary"
+                                    label="Signup to Vidvan"
+                                    styleClass="size-14 we-5 justify-content-center">
+                                </p-button>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+            <div class="col-12 md:col-6 flex-auto p-0">
+                <div class="card flex md:justify-content-end justify-content-center p-card-vidvan">
+                    <p-card styleClass="p-cardVidvan" (click)="selectedRole = 'teacher'">
+                        <ng-template pTemplate="header">
+                            <img alt="Card" src="/assets/images/logoTeacher.png" />
+                        </ng-template>
+                        <div class="flex align-items-center justify-content-center">
+                            <label for="ingredient1" class="size-34 we-4 text-left"> I`m a Teacher </label>
+                        </div>
+                        <ng-template pTemplate="footer">
+                            <div class="flex flex-column align-items-center singIn-button">
+                                <p-button
+                                    (click)="onSignIn('teacher')"
+                                    [outlined]="true"
+                                    severity="secondary"
+                                    label="Signup to Vidvan"
+                                    styleClass="size-14 we-5 justify-content-center">
+                                </p-button>
+                            </div>
+                        </ng-template>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="size-16 we-4 color-black2 line-height-24 letter-spacing1 footer-text">
+        By clicking Sign up, you agree to Vidvan`s <a href="" class="we-4">Terms of Service</a> and
+        <a href="" class="we-4">Privacy Policy</a>
+    </p>
+</div>
