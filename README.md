@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FrontendPrototype
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.
@@ -25,3 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Youtube-Comments-Analysis
+>>>>>>> 6b57f571ee10b4f108b3302fe35d6b2386ee1a20
