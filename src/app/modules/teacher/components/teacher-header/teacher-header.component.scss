@@ -1,174 +1,29 @@
-.vidvan-site-layout {
-    // max-width: 2000px;
-    height: 100px;
-    padding: 24px 32px;
-    gap: 32px;
-    margin: 0 auto !important;
-    background: #FFFFFF;
-
-}
-
-.vidvan-logo {
-    h1 {
-        padding: 0 32px;
-    }
-}
-
-:host::ng-deep {
-    .p-stepperStepperPanel {
-        width: 97%;
-        padding: 0 24px;
-        border-radius: 1.5rem;
-        background: #F4F7FC;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-
-        .p-stepper {
-            width: 92%;
-            overflow-x: auto;
-        }
-
-        .p-stepper-nav::-webkit-scrollbar {
-            background: transparent;
-            width: 0;
-            height: 0;
-        }
-
-        .p-stepper-nav::-webkit-scrollbar-track {
-            padding: 0;
-        }
-
-        .p-stepper-nav::-webkit-scrollbar-thumb {
-            background: #ccc;
-            width: 0;
-            border-radius: 0;
-        }
-
-        .p-stepper-nav {
-            width: 100%;
-            background: transparent;
-            gap: 10px;
-        }
-
-        .p-stepper .p-stepper-panels {
-            display: none;
-        }
-
-        .p-stepper .p-stepper-header {
-            width: 100%;
-            padding: 0;
-            opacity: 1;
-        }
-
-        .p-stepper .p-stepper-header .p-stepper-action {
-            width: 100%;
-        }
-
-        .p-stepper .p-stepper-separator {
-            display: none;
-        }
-
-        .stepperPanel-button {
-            width: 100%;
-            height: auto;
-            padding: 19px 0;
-            border: 0;
-            background: transparent;
-        }
-
-        .stepperPanel-spanButton {
-            display: block;
-            width: 100%;
-            height: 6px;
-            border-radius: 12px;
-            background: #E3E5E9;
-        }
-
-        .spanButton-activ {
-            background: linear-gradient(90deg, #D84315 0%, #FF7043 100%);
-        }
-
-        p {
-            margin: 0;
-            color: #E57373;
-
-            span {
-                background: linear-gradient(90deg, #D84315 0%, #FF7043 100%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        }
-
-    }
-}
-
-.custom-stepper {
+.header {
+    background-color: #e74c3c;
+    color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-.custom-stepper div {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 2px solid #e0e0e0;
-    /* Inactive line */
-    position: relative;
-}
-
-.completed {
-    color: #ff5722;
-    /* Color for active step */
+.title {
+    font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid #ff5722;
-    /* Active line */
 }
 
-.inactive {
-    color: #888;
-    /* Color for inactive steps */
+.user-info {
+    display: flex;
+    align-items: center;
 }
 
-
-@media (max-width: 991px) {
-
-    .vidvan-logo {
-        h1 {
-            padding: 0 16px 24px;
-        }
-    }
+.date-time {
+    margin-right: 10px;
+    font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    .vidvan-site-layout {
-        padding: 0;
-    }
-
-}
-
-@media screen and (min-width:1921px) and (max-width:2880px) {
-    .vidvan-site-layout {
-        height: 200px;
-        padding: 56px 64px;
-    }
-
-    :host::ng-deep {
-        .p-stepperStepperPanel {
-            height: 96px;
-            border-radius: 3rem;
-            padding: 0 48px;
-
-            .stepperPanel-button {
-                padding: 40px 0;
-            }
-
-            .stepperPanel-spanButton {
-                height: 12px;
-                border-radius: 24px;
-            }
-        }
-    }
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
