@@ -1,67 +1,87 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("file:///C:/Users/new1/Downloads/7-tips-corporate-designs-ideas.webp");
+    background-image: url('https://i.pinimg.com/736x/96/23/6e/96236e0f4baa6e5995d9f377e38e0d88.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    flex-direction: column; /* Stack elements */
 }
 
-
+/* Center and enlarge the signup section */
 .signup-section {
     width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgba(245, 227, 227, 0.178); /* Slightly transparent white */
-    backdrop-filter: blur(10px); /* Blur effect */
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
-h1{
+    max-width: 500px; /* Increased width */
+    padding: 30px; /* More padding */
+    background-color: rgba(245, 227, 227, 0.2); /* Slightly transparent white */
+    backdrop-filter: blur(15px); /* Stronger blur effect */
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
     text-align: center;
-    
 }
+
+/* Increase heading sizes */
+h1 {
+    font-size: 28px; /* Larger */
+}
+
 h2 {
-    text-align: center;
+    font-size: 24px; /* Larger */
     color: #F17272;
 }
 
+/* Styling for form */
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
+/* Increase input box and labels */
 label {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
+    font-size: 18px; /* Increased font size */
 }
 
 input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px; /* Bigger padding */
+    margin-bottom: 20px;
+    border: 2px solid #ccc; /* Slightly thicker border */
+    border-radius: 8px; /* Rounded edges */
+    font-size: 16px; /* Larger text */
+    width: 90%;
 }
 
+/* Enlarge the button */
 button {
-    padding: 10px;
+    padding: 12px;
     background-color: #F17272;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px; /* Larger font */
+    font-weight: bold;
+    width: 90%;
 }
 
 button:hover {
     background-color: #cc0000;
 }
 
-p {
-    text-align: center;
-    margin-top: 20px;
-}
-
+/* Move footer text lower */
 footer {
+    position: absolute;
+    bottom: 10px; /* Adjust distance from bottom */
+    width: 100%;
     text-align: center;
-    padding: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
 }
