@@ -301,17 +301,10 @@ export class GlobalService {
     }
 
     logout() {
-        const body = {
-            userId: this.userId,
-            // eventType: eventTypes.logout,
-            description: 'User Logged Out',
-        };
-        // create log when user log out
-        this.httpService.post(environment.baseUrl + 'activity-logs/insert', body);
-        this.goToPage('auth/sign-in');
-        this.setObservable('isLogout', true);
+        this.goToPage('auth/login');
         this.clearStorage();
         this.userId = '';
+        this.user = {};
     }
 
     /**

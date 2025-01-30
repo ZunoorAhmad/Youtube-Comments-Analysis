@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TeacherDashboardComponent } from './components/teacher-dashboard/teacher-dashboard.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 const routes: Routes = [
     {
@@ -21,6 +23,18 @@ const routes: Routes = [
             {
                 path: 'teacher-dashboard',
                 component: TeacherDashboardComponent,
+            },
+            {
+                path: 'overview',
+                component: OverviewComponent,
+            },
+            {
+                path: 'reports',
+                component: ReportsComponent,
+            },
+            {
+                path: 'profile',
+                component: ProfileComponent,
             },
         ],
     },

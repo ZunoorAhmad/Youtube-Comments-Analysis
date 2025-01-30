@@ -38,21 +38,22 @@ import { TabViewModule } from 'primeng/tabview';
 import { TagModule } from 'primeng/tag';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ProfileComponent } from './components/profile/profile.component';
-import { RegistrationRequestModalComponent } from './components/registration-request-modal/registration-request-modal.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { TeacherDashboardComponent } from './components/teacher-dashboard/teacher-dashboard.component';
 import { TeacherHeaderComponent } from './components/teacher-header/teacher-header.component';
 import { TeacherSidebarComponent } from './components/teacher-sidebar/teacher-sidebar.component';
 import { TeacherRoutingModule } from './teacher-routing.module';
+import { OverviewComponent } from './components/overview/overview.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 export const defaultDeclarations = [
     ProfileComponent,
-    RegistrationRequestModalComponent,
     TeacherComponent,
     TeacherDashboardComponent,
     TeacherHeaderComponent,
+    ReportsComponent,
+    OverviewComponent,
     TeacherSidebarComponent
-
 ];
 export const defaultImports = [
     CommonModule,
