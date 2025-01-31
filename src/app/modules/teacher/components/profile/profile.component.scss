@@ -1,194 +1,51 @@
-// ::ng-deep .p-calendar .p-inputtext {
-//     flex: 1 1 auto;
-//     width: 1%;
-//     height: 38px !important;
-// }
-
-::ng-deep .switchInput .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
-    background: #ff7043;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-::ng-deep .switchInput .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
-    background-color: #ffc7b5;
+.settings-container {
+    background-color: white;
+    width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.save-profile-icon {
-    width: 1.8rem;
-    height: 1.8rem;
+.settings-section {
+    margin-bottom: 20px;
 }
 
-.p-card-head {
-
-    .policy {
-        color: #616161;
-        background: #EDF1FA;
-        border-radius: .8rem;
-        padding: .8rem;
-        height: 100%;
-    }
-
-    i {
-        font-size: 2rem;
-    }
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b0b0b0;
+    margin-bottom: 10px;
 }
 
-hr {
-    background: #edf1fa;
-    margin: 1.6rem 0;
-    height: .1rem;
-    border: none;
+.settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.img-container {
-    width: 19.2rem;
-    height: 19.2rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: 19.2rem;
-
-    .profile {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .add-edit {
-        position: absolute;
-        inset: 0 0 0 0;
-
-        &::before {
-            content: '';
-            position: absolute;
-            inset: 0 0 0 0;
-            background: rgb(255 255 255 / 65%);
-            z-index: 1;
-        }
-
-        p {
-            position: relative;
-            z-index: 2;
-        }
-
-        input {
-            position: absolute;
-            inset: 0 0 0 0;
-            opacity: 0;
-            z-index: 3;
-            cursor: pointer;
-        }
-    }
+.settings-item:hover {
+    background-color: #f0f0f0;
 }
 
-// p {
-//     line-height: 1.4rem;
-// }
-
-.profile-fields {
-    flex: 1;
-    width: 100%;
-
-    p {
-        color: #000;
-    }
-}
-
-.fex-1 {
-    flex: 1;
-    width: 100%;
-}
-
-.spec-btn {
-    p-button {
-        margin: .8rem;
-    }
-}
-
-::ng-deep .subject-input-field {
-    .pi-search {
-        font-size: x-large;
-        z-index: 1;
-        top: 2.2rem;
-        left: 1.6rem;
-    }
-
-    .p-inputtext-lg .p-inputtext {
-        padding-left: 5rem;
-        font-size: 1.4rem;
-        letter-spacing: 1.6rem;
-    }
-
-    .p-autocomplete {
-        width: 100%;
-    }
-
-}
-
-.user-summary-text {
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-
-::ng-deep .teacher-availability-table {
-
-    .teacher-table-th1,
-    .teacher-table-th2,
-    .teacher-table-th3,
-    .teacher-table-th4 {
-        width: 19%;
-    }
-
-    .teacher-table-td1,
-    .teacher-table-td2,
-    .teacher-table-td3,
-    .teacher-table-td4 {
-        width: 19%;
-    }
-
-    .teacher-table-th5 {
-        width: 7.8%;
-    }
-
-    .teacher-table-td5 {
-        width: 7.8%;
-    }
-}
-
-::ng-deep .tags-area-div {
-    .p-tag {
-        padding: 0.4rem 1.6rem 0.4rem 1.6rem;
-    }
-}
-
-::ng-deep .p-editor-fields-area {
-    .ql-editor[data-placeholder]::before {
-        width: 38rem;
-        -webkit-line-clamp: 2;
-        display: -webkit-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
-    }
-
-}
-
-::ng-deep .Submit-btn {
-    min-height: 5.4rem;
-}
-
-@media (max-width: 576px) {
-    .spec-btn {
-        p-button {
-            margin: 0;
-            width: 100%;
-        }
-    }
-
-    ::ng-deep .Submit-btn {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
+.arrow {
+    font-size: 18px;
+    color: #888;
 }
