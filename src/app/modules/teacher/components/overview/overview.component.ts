@@ -14,6 +14,16 @@ export class OverviewComponent implements OnInit {
   loading: boolean = false;
   loadingMessage: string = '';
 
+  // Define an array of messages that will be cycled every second.
+  private loadingMessages: string[] = [
+    "Loading...",
+    "Analyzing Comments...",
+    "Crunching Data...",
+    "Almost Done..."
+  ];
+  private currentMessageIndex: number = 0;
+  private loadingInterval: any; // used to store the interval ID
+
   constructor(
     private http: HttpService,
     private globalService: GlobalService
@@ -28,29 +38,31 @@ export class OverviewComponent implements OnInit {
   }
 
   fetchResults(): void {
-    // Start the loading process
     this.loading = true;
-    this.loadingMessage = "Loading...";
+    this.currentMessageIndex = 0;
+    // Set the first message
+    this.loadingMessage = this.loadingMessages[this.currentMessageIndex];
 
-    // After 1 second, if still loading, update the message.
-    setTimeout(() => {
-      if (this.loading) {  // still loading
-        this.loadingMessage = "Analyzing Comments...";
-      }
-    }, 2000);
+    // Start an interval to update the message every 1 second.
+    this.loadingInterval = setInterval(() => {
+      this.currentMessageIndex = (this.currentMessageIndex + 1) % this.loadingMessages.length;
+      this.loadingMessage = this.loadingMessages[this.currentMessageIndex];
+    }, 1000);
 
+    // Construct the API URL.
     const endpoint = environment.baseUrl + 'youtube-sentiment/';
     const queryParams = `?url=${encodeURIComponent(this.userUrl)}&user_id=${this.globalService.user.id}`;
-
     this.http.get(endpoint + queryParams)
       .then((res) => {
         console.log(res);
         this.videoData = res;
         this.loading = false;
+        clearInterval(this.loadingInterval);
       })
       .catch((err) => {
         console.log(err);
         this.loading = false;
+        clearInterval(this.loadingInterval);
       });
   }
 }
