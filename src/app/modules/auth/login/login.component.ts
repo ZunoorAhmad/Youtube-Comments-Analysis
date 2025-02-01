@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
             this.loginForm.markAllAsTouched();
             return;
         }
-        const loginData = this.loginForm.value;
-        this.http.post(environment.baseUrl + 'login/', loginData).then((res) => {
+        const body = { username: this.loginForm.value.email, password: this.loginForm.value.password }
+        this.http.post(environment.baseUrl + 'login/', body).then((res) => {
             console.log(res);
             this.globalService.setStorage('userInfo', res);
             this.loginForm.reset();
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             this.globalService.openSnackBar("User Login successfully");
         }).catch((err) => {
             console.error('Login error:', err);
-            this.errorMessage = err.error.message || 'Login failed. Please try again.';
+            this.errorMessage = err.error || 'Login failed. Please try again.';
         })
     }
 }
