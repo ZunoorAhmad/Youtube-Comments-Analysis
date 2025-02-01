@@ -32,6 +32,11 @@
     margin-bottom: 20px;
     color: red;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 150px; /* Space between sections */
+}
 
 .info-boxes {
     display: flex;
