@@ -47,7 +47,7 @@ export class OverviewComponent implements OnInit {
     this.loadingInterval = setInterval(() => {
       this.currentMessageIndex = (this.currentMessageIndex + 1) % this.loadingMessages.length;
       this.loadingMessage = this.loadingMessages[this.currentMessageIndex];
-    }, 1000);
+    }, 2000);
 
     // Construct the API URL.
     const endpoint = environment.baseUrl + 'youtube-sentiment/';

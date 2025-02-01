@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
             return;
         }
         const body = { username: this.loginForm.value.email, password: this.loginForm.value.password }
-        this.http.post(environment.baseUrl + 'login/', body).then((res) => {
+        this.http.post(environment.baseUrl + 'login/', body).then((res:any) => {
             console.log(res);
-            this.globalService.setStorage('userInfo', res);
+            this.globalService.setStorage('userInfo', res.user);
             this.loginForm.reset();
-            this.globalService.goToPage('/main/home');
+            this.globalService.goToPage('/teacher');
             this.globalService.openSnackBar("User Login successfully");
         }).catch((err) => {
             console.error('Login error:', err);
