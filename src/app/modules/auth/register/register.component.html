@@ -11,7 +11,9 @@
         <h1>Youtube Comment Analysis</h1>
         <h2>Sign Up</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <label for="email/name">Email/Username:</label>
+            <label for="email/name">Username:</label>
+            <input type="email" id="email/name" formControlName="username" required>
+            <label for="email/name">Email:</label>
             <input type="email" id="email/name" formControlName="email" required>
             <label for="password">Password:</label>
             <input type="password" id="password" formControlName="password" required>

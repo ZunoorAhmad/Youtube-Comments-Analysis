@@ -1,7 +1,11 @@
 <main class="home-content">
     <div class="search-bar">
-        <input type="text" placeholder="Enter YouTube Video URL">
-        <button class="analyze-btn">Analyze</button>
+        <input type="text" placeholder="Enter YouTube Video URL" [formControl]="urlControl">
+        <button class="analyze-btn" (click)="analyzeUrl()">Analyze</button>
+    </div>
+
+    <div *ngIf="urlControl.touched && urlControl.invalid" class="error-message">
+        Enter a valid Youtube URL.
     </div>
 
     <div class="alert">⚠️ Comment analysis only works for English comments.</div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { HttpService } from 'src/app/services/http.service';
+import { environment } from 'src/environments/environment';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
     selector: 'app-register',
@@ -14,12 +15,13 @@ export class RegisterComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private http: HttpClient,
-        private router: Router
+        private http: HttpService,
+        private globalSerivce: GlobalService
     ) { }
 
     ngOnInit(): void {
         this.registerForm = this.fb.group({
+            username: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required],
             confirmPassword: ['', Validators.required]
@@ -38,18 +40,17 @@ export class RegisterComponent implements OnInit {
             return;
         }
         const registerData = {
+            username: this.registerForm.value.username,
             email: this.registerForm.value.email,
             password: this.registerForm.value.password
         };
-        this.http.post('/api/register', registerData).subscribe({
-            next: (response: any) => {
-                console.log(response);
-                this.router.navigate(['/welcome']);
-            },
-            error: (error) => {
-                console.error('Registration error:', error);
-                this.errorMessage = error.error?.message || 'Registration failed. Please try again.';
-            }
-        });
+        this.http.post(environment.baseUrl + 'signup/', registerData).then((res) => {
+            console.log(res);
+            this.globalSerivce.setStorage('userInfo', res);
+            this.globalSerivce.openSnackBar("User Registered successfully");
+            this.globalSerivce.goToPage('/main/home');
+        }).catch((err) => {
+            console.log(err);
+        })
     }
 }

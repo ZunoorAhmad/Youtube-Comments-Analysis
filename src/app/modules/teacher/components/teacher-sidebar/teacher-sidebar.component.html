@@ -1,9 +1,28 @@
 <aside class="sidebar">
     <ul>
-        <li (click)="globalService.goToPage('/teacher/teacher-dashboard')" class="active"><i class="icon">🏠</i> Home</li>
-        <li (click)="globalService.goToPage('/teacher/overview')"><i class="icon">📊</i> Overview</li>
-        <li (click)="globalService.goToPage('/teacher/reports')"><i class="icon">📜</i> Reports</li>
-        <li (click)="globalService.goToPage('/teacher/profile')"><i class="icon">⚙️</i> Settings</li>
-        <li (click)="globalService.logout()"><i class="icon">⚙️</i> Logout</li>
+      <li
+        (click)="globalService.goToPage('/teacher/teacher-dashboard')"
+        [class.active]="isActive('/teacher/teacher-dashboard')">
+        <i class="icon">🏠</i> Home
+      </li>
+      <li
+        (click)="globalService.goToPage('/teacher/overview')"
+        [class.active]="isActive('/teacher/overview')">
+        <i class="icon">📊</i> Overview
+      </li>
+      <li
+        (click)="globalService.goToPage('/teacher/reports')"
+        [class.active]="isActive('/teacher/reports')">
+        <i class="icon">📜</i> Reports
+      </li>
+      <li
+        (click)="globalService.goToPage('/teacher/profile')"
+        [class.active]="isActive('/teacher/profile')">
+        <i class="icon">⚙️</i> Settings
+      </li>
+      <li (click)="globalService.logout()">
+        <i class="icon">⚙️</i> Logout
+      </li>
     </ul>
-</aside>
+  </aside>
+  

@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseUrl: 'https://backend-dot-vidvan-prototype.uc.r.appspot.com/',
+    baseUrl: 'http://127.0.0.1:8000/',
 };

@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overview - YouTube Comment Analysis</title>
-   
+
 </head>
+
 <body>
-    
+
     <main class="content">
-
-        <section class="video-info">
-            <h2>Video Information</h2>
-            <div class="video-card">
-                <div class="video-details">
-                    <p class="video-title">Jhol | Coke Studio Pakistan | Season 15 | Maanu x Annural Khalid</p>
-                    <p class="channel-name">By Coke Studio Pakistan</p>
+        <ng-container *ngIf="videoData?.video_id">
+            <section class="video-info">
+                <h2>Video Information</h2>
+                <div class="video-card">
+                    <div class="video-details">
+                        <p class="video-title">{{videoData.video_title}}</p>
+                        <p class="channel-name">{{videoData.channel_name}}</p>
+                    </div>
+                    <img [src]="videoData.thumbnail_url" alt="Video Thumbnail" class="video-thumbnail">
                 </div>
-                <img src="jhol-thumbnail.jpg" alt="Video Thumbnail" class="video-thumbnail">
-                
-            </div>
-        </section>
-
-        <section class="overview">
-            <h1>Overview</h1>
-            <div class="metrics">
-                <div class="metric">👍 Likes <br> 1,357,689</div>
-                <div class="metric">👀 Views <br> 1,357,689</div>
-                <div class="metric">💬 Comments <br> 1,357,689</div>
-                <div class="metric">👎 Dislikes <br> 1,357,689</div>
-                <div class="metric">😊 Sentiment <br> 1,357,689</div>
-                <div class="metric">😡 Negative Comments <br> 1,357,689</div>
-                <div class="metric">😃 Positive Comments <br> 1,357,689</div>
-                <div class="metric">😐 Neutral Comments <br> 1,357,689</div>
-            </div>
-        </section>
+            </section>
+            <section class="overview">
+                <h1>Overview</h1>
+                <div class="metrics">
+                    <div class="metric">👍 Likes <br> {{videoData.statistics.likes}}</div>
+                    <div class="metric">👀 Views <br> {{videoData.statistics.views}}</div>
+                    <div class="metric">💬 Comments <br> {{videoData.statistics.comments}}</div>
+                    <div class="metric">👎 Dislikes <br> {{videoData.statistics.dislikes}}</div>
+                    <div class="metric">😊 Sentiment <br> {{videoData.sentiments.sentiment_score}}</div>
+                    <div class="metric">😡 Negative Comments <br> {{videoData.sentiments.negative_comments}}</div>
+                    <div class="metric">😃 Positive Comments <br> {{videoData.sentiments.positive_comments}}</div>
+                    <div class="metric">😐 Neutral Comments <br> {{videoData.sentiments.neutral_comments}}</div>
+                </div>
+            </section>
+        </ng-container>
     </main>
 </body>
+
 </html>

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {
         this.loginForm = this.fb.group({
-            email: ['', [Validators.required, Validators.email]],  // Ensures a proper email format
+            email: ['', [Validators.required]],  // Ensures a proper email format
             password: ['', Validators.required]
         });
     }
@@ -33,8 +33,12 @@ export class LoginComponent implements OnInit {
             return;
         }
         const loginData = this.loginForm.value;
-        this.http.post(environment.baseUrl + '/signin', loginData).then((res) => {
+        this.http.post(environment.baseUrl + 'login/', loginData).then((res) => {
             console.log(res);
+            this.globalService.setStorage('userInfo', res);
+            this.loginForm.reset();
+            this.globalService.goToPage('/main/home');
+            this.globalService.openSnackBar("User Login successfully");
         }).catch((err) => {
             console.error('Login error:', err);
             this.errorMessage = err.error.message || 'Login failed. Please try again.';
