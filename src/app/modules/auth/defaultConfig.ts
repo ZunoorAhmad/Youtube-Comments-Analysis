@@ -1,8 +1,6 @@
 import {
     SocialLoginModule,
     GoogleSigninButtonModule,
-    GoogleLoginProvider,
-    SocialAuthServiceConfig,
 } from '@abacritt/angularx-social-login';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,7 +9,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
-import { environment } from 'src/environments/environment';
 import { CardModule } from 'primeng/card';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { RegisterComponent } from './register/register.component';
@@ -45,21 +42,4 @@ export const defaultImports = [
 
 export const defaultProviders = [
     AuthService,
-    {
-        provide: 'SocialAuthServiceConfig',
-        useValue: {
-            autoLogin: false,
-            providers: [
-                {
-                    id: GoogleLoginProvider.PROVIDER_ID,
-                    provider: new GoogleLoginProvider(environment.googleClientId, {
-                        prompt: 'none',
-                        oneTapEnabled: false,
-                        scopes: 'https://www.googleapis.com/auth/userinfo.profile',
-                    }),
-                },
-            ],
-            onError: err => {},
-        } as SocialAuthServiceConfig,
-    },
 ];

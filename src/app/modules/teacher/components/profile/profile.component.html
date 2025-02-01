@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
-   
+
 </head>
+
 <body>
 
     <div class="settings-container">
@@ -31,7 +33,7 @@
                 <span>Privacy policy</span>
                 <span class="arrow">&#10095;</span>
             </div>
-            <div class="settings-item">
+            <div (click)="globalService.goToPage('teacher/terms-and-conditions')" class="settings-item">
                 <span>Terms and conditions</span>
                 <span class="arrow">&#10095;</span>
             </div>
@@ -39,4 +41,5 @@
     </div>
 
 </body>
+
 </html>

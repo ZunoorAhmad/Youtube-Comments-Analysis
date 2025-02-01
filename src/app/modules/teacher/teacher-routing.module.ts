@@ -5,6 +5,7 @@ import { TeacherDashboardComponent } from './components/teacher-dashboard/teache
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 const routes: Routes = [
     {
@@ -35,6 +36,10 @@ const routes: Routes = [
             {
                 path: 'profile',
                 component: ProfileComponent,
+            },
+            {
+                path: 'terms-and-conditions',
+                component: TermsAndConditionsComponent,
             },
         ],
     },

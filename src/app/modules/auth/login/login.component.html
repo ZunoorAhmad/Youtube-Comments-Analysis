@@ -4,30 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Revelation of Audience Response</title>
-    
+
 </head>
 <body>
-
-    <!-- Sign-Up Form Section -->
     <section class="signup-section">
-         <h1>Youtube Comment Analysis</h1>
+        <h1>Youtube Comment Analysis</h1>
         <h2>Sign In</h2>
-        <form action="/signin" method="POST">
-            
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <label for="email/name">Email/Username:</label>
-            <input type="email/text" id="email/name" name="email/name" required>
-
+            <input type="email" id="email/name" formControlName="email" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button (click)="global.goToPage('/teacher')" type="submit">Sign In</button>
+            <input type="password" id="password" formControlName="password" required>
+            <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
         </form>
-
-        <p>Create a new account? <a href="/auth/register">Sign up</a>.</p>
+        <p class="text-xl">Create a new account? <a href="/auth/register">Sign up</a>.</p>
     </section>
-
     <footer>
-        <p>&copy; 2024 Revelation of Audience Response. All rights reserved.</p>
+        <p>&copy; 2025 Revelation of Audience Response. All rights reserved.</p>
     </footer>
 </body>
 </html>

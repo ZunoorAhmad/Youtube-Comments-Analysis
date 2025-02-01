@@ -45,6 +45,7 @@ import { TeacherSidebarComponent } from './components/teacher-sidebar/teacher-si
 import { TeacherRoutingModule } from './teacher-routing.module';
 import { OverviewComponent } from './components/overview/overview.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 export const defaultDeclarations = [
     ProfileComponent,
@@ -52,6 +53,7 @@ export const defaultDeclarations = [
     TeacherDashboardComponent,
     TeacherHeaderComponent,
     ReportsComponent,
+    TermsAndConditionsComponent,
     OverviewComponent,
     TeacherSidebarComponent
 ];

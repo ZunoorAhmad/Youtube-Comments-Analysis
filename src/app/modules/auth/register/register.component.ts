@@ -1,65 +1,55 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { GlobalService } from 'src/app/services/global.service';
-import {
-    FormControl,
-    Validators,
-    AbstractControlOptions,
-    ValidatorFn,
-    AbstractControl,
-    ValidationErrors,
-    FormBuilder,
-    FormGroup,
-} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',
-    styleUrl: './register.component.scss',
+    styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-    fb = inject(FormBuilder);
-    signupForm: FormGroup;
+    registerForm: FormGroup;
+    errorMessage: string = '';
 
-    constructor(public globalService: GlobalService) {
-        this.signupForm = this.fb.group(
-            {
-                email: new FormControl('', [
-                    Validators.required,
-                    Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
-                ]),
-                password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-                confirmPassword: new FormControl(''), // Updated this key
-            },
-            { validators: this.PasswordValidator } as AbstractControlOptions
-        );
-    }
-
-    get formControl() {
-        return this.signupForm.controls;
-    }
-
-    PasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | Boolean => {
-        const password = control.get('password');
-        const confirmPassword = control.get('confirmPassword'); // Updated this key
-        if (password && confirmPassword && password.value !== confirmPassword.value) {
-            return { passwordmatcherror: true };
-        }
-        return false;
-    };
+    constructor(
+        private fb: FormBuilder,
+        private http: HttpClient,
+        private router: Router
+    ) { }
 
     ngOnInit(): void {
-        return;
+        this.registerForm = this.fb.group({
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', Validators.required],
+            confirmPassword: ['', Validators.required]
+        }, { validator: this.passwordMatchValidator });
     }
 
-    async signup() {
-        try {
-            await this.globalService.setStorage('credentials', {
-                email: this.signupForm.value.email,
-                password: this.signupForm.value.password,
-            });
-            this.globalService.goToPage('/auth/login');
-        } catch (error) {
-            this.globalService.setObservable('isLoading', false);
+    passwordMatchValidator(formGroup: AbstractControl) {
+        const password = formGroup.get('password')?.value;
+        const confirmPassword = formGroup.get('confirmPassword')?.value;
+        return password === confirmPassword ? null : { mismatch: true };
+    }
+
+    onSubmit(): void {
+        if (this.registerForm.invalid) {
+            this.registerForm.markAllAsTouched();
+            return;
         }
+        const registerData = {
+            email: this.registerForm.value.email,
+            password: this.registerForm.value.password
+        };
+        this.http.post('/api/register', registerData).subscribe({
+            next: (response: any) => {
+                console.log(response);
+                this.router.navigate(['/welcome']);
+            },
+            error: (error) => {
+                console.error('Registration error:', error);
+                this.errorMessage = error.error?.message || 'Registration failed. Please try again.';
+            }
+        });
     }
 }

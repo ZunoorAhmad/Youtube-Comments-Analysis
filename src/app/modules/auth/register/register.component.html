@@ -4,33 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Revelation of Audience Response</title>
-    
+
 </head>
 <body>
-
-    <!-- Sign-Up Form Section -->
     <section class="signup-section">
-         <h1>Youtube Comment Analysis</h1>
+        <h1>Youtube Comment Analysis</h1>
         <h2>Sign Up</h2>
-        <form action="/signup" method="POST">
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="name">Username:</label>
-            <input type="text" id="name" name="name" required>
-
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <label for="email/name">Email/Username:</label>
+            <input type="email" id="email/name" formControlName="email" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Create Account</button>
+            <input type="password" id="password" formControlName="password" required>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
+            <button type="submit" [disabled]="registerForm.invalid">Sign Up</button>
         </form>
-
-        <p>Already have an account? <a href="/auth/login">Log in here</a>.</p>
+        <p class="text-xl">Already have an account? <a href="/auth/login">Sign In</a>.</p>
     </section>
-
     <footer>
-        <p>&copy; 2024 Revelation of Audience Response. All rights reserved.</p>
+        <p>&copy; 2025 Revelation of Audience Response. All rights reserved.</p>
     </footer>
 </body>
 </html>
