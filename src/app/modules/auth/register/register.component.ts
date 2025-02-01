@@ -41,16 +41,18 @@ export class RegisterComponent implements OnInit {
         }
         const registerData = {
             username: this.registerForm.value.username,
+            fullname: this.registerForm.value.username,
             email: this.registerForm.value.email,
             password: this.registerForm.value.password
         };
-        this.http.post(environment.baseUrl + 'signup/', registerData).then((res) => {
+        this.http.post(environment.baseUrl + 'signup/', registerData).then((res:any) => {
             console.log(res);
-            this.globalSerivce.setStorage('userInfo', res);
+            this.globalSerivce.setStorage('userInfo', res.user);
             this.globalSerivce.openSnackBar("User Registered successfully");
-            this.globalSerivce.goToPage('/main/home');
+            this.globalSerivce.goToPage('/teacher');
         }).catch((err) => {
             console.log(err);
+            this.errorMessage = err.username[0] || 'Registration failed. Try using another name/email.';
         })
     }
 }

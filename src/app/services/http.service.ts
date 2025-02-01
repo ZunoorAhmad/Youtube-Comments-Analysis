@@ -41,15 +41,15 @@ export class HttpService {
         });
     }
 
-    post(endpoint, body, headers = {}) {
+    post(endpoint, body) {
         return new Promise((resolve, reject) => {
             this.http.post(endpoint, body).subscribe(
                 (res: any) => {
-                    if (res && res.success == true) {
-                        resolve(res.data);
-                    } else {
-                        reject(res);
-                    }
+                    // if (res && res.success == true) {
+                        resolve(res);
+                    // } else {
+                    //     reject(res);
+                    // }
                 },
                 err => {
                     reject(err.error);

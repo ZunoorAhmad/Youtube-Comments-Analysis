@@ -19,6 +19,7 @@
             <input type="password" id="password" formControlName="password" required>
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
+            <p class="text-xl">{{errorMessage}}</p>
             <button type="submit" [disabled]="registerForm.invalid">Sign Up</button>
         </form>
         <p class="text-xl">Already have an account? <a href="/auth/login">Sign In</a>.</p>

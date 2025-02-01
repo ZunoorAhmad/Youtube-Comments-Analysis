@@ -13,8 +13,9 @@ export class AuthGuard implements CanActivate {
 
     canActivate() {
         const currentUser: any = this.global.getStorage("userInfo");
-        if (currentUser?.full_name || currentUser?.username || currentUser?.id) {
-            return false;
+        if (currentUser?.fullname || currentUser?.username || currentUser?.id) {
+            this.global.user = currentUser;
+            return true;
         } else {
             this.global.goToPage('/auth');
         }
