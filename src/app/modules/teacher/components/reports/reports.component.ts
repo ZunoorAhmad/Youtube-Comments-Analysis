@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 export class ReportsComponent implements OnInit {
 
   histories: any[] = [];
+  url: string = environment.baseUrl;
 
   constructor(private http: HttpService,
     private globalService: GlobalService
